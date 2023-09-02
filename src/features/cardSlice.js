@@ -16,7 +16,6 @@ const cardSlice = createSlice({
       state.pop();
     },
     deleteThis(state, action){
-      const x = state.findIndex( card => card.id === action.payload);
       return state.filter(( item ) => item.id !== action.payload );
     }
   },
