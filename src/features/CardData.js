@@ -79,7 +79,16 @@ export const CardData = () => {
   return (
     <section className="container container-fluid flash-deck">
       <div className="d-flex flex-row flex-wrap deck-row">{renderedCard}</div>
-
+      <div className="container container see-all">
+        <button className="btn btn-light see-all-btn">
+          <i>see all
+          {
+            <BsArrowRight
+              style={{ fontSize: "23px", color: "#ef2121" }}
+            />
+          }</i>
+        </button>
+      </div>
       <div className="d-flex flex-row justify-content-center align-items-center reset-div">
         <button
           type="button"
