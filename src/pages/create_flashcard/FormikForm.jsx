@@ -199,8 +199,6 @@ export const FormikForm = () => {
         }}
         validationSchema={theSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          // const [values] = useField(values);
-
           values.groupImage = groupImg;
           setTimeout(() => {
             console.log("submitted");
