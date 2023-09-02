@@ -1,0 +1,64 @@
+.carousel{
+    overflow: hidden;
+    width: 526px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.inner{
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+.item{
+    width: 530px;
+    height: 199px;
+    max-height: 300px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.box-shadow{
+    box-shadow: 0 1px 4px rgba(142, 142, 142, 0.663);
+}
+
+.car-img-div{
+    width: 209px;
+    height: 147px;
+}
+.card-text-div{
+    width: 209px;
+}
+.carousel-img{
+    width:fit-content;    
+    max-width: 100%;
+    object-fit: contain;
+    padding: 0 20px 0 20px;
+}
+
+.carousel-item-text{
+    max-width:245px;
+    font-size: 1rem;
+    margin: 0px 0 40px 0;
+    padding: 0 20px 0 20px;
+    white-space: normal;
+    color: #a6a6a6;
+    overflow-wrap: break-word;
+}
+
+.carousel-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-arrows{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.indicators{
+    margin-top: 20px;
+}

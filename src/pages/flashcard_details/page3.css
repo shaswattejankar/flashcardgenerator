@@ -1,0 +1,135 @@
+.heading-container{
+    margin-left: 123px;
+}
+
+
+.button{
+    border: none;
+    background: none  ;
+    padding-left: 14px;
+}
+
+.info{
+    margin: 25px auto 55px auto;
+}
+
+.g{
+    text-align: left;
+}
+
+.content{
+    gap : 20px;
+    margin-left: 67px;
+}
+
+.styler{
+    background-color: white;
+    border-radius: 4px;
+    
+}
+.col-left{
+    padding: 14px;
+    max-width: 180px;
+    height: fit-content;
+    padding-bottom: 10px;
+}
+.col-left, .col-right{
+    flex-shrink: 2;
+    flex-grow: 0;
+    flex-basis: 260px;
+    padding-left: 35px;
+}
+
+.col-mid{
+    flex-grow: 2;
+    max-width: 554px;
+}
+.col-right{
+    padding: 0px;
+}
+.row-1{
+    font-size: 15px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #a6a6a6;
+    color: #a6a6a6;
+    text-align: left;
+    padding-left: 0px;
+}
+.row-2{
+    padding-top: 13px;
+    text-align: left;
+    padding-left: 0px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.list-group{
+    --bs-list-group-action-hover-bg: none;
+    --bs-list-group-active-color: #df0000;
+    --bs-list-group-active-bg: #ffffff;
+    --bs-list-group-border-width: 0rem;
+    --bs-list-group-active-border-color: #b31717;
+}
+.list-group-item{
+    border:none;
+    width: fit-content;
+    cursor: pointer;
+    /* --bs-list-group-item-action-active-bg : #f00; */
+}   
+
+.carousel-flex{
+    padding: 20px;
+    background: none;
+
+}
+.util-section{
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    margin-top: 7px;
+    
+}
+.util-button{
+    width: 255px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+}
+
+.modal-row{
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    height: 42px;
+}
+
+.link-input{
+    width: 500px;
+    border: none;
+    margin-left: 5px;
+    padding-left: 10px;
+}
+
+.input-group{
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: rgb(192, 192, 192);
+    align-items: center;
+    width:fit-content;
+    padding: 0px;
+}
+
+.input-group-text{
+    background-color: #f6f6f6;
+    border: none;
+    color: #b0b0b0;
+}
+
+.cs-btn{
+    height:inherit;
+    background: none;
+    border: none;
+}

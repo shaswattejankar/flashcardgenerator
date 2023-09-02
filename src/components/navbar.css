@@ -1,0 +1,38 @@
+.container1{
+    max-width: 1118px;
+}
+.container1 .c{
+    margin-left: 28px;
+}
+.whole{
+    font-size: 20px;
+    background-color: #f5f1ec;
+}
+.title{
+    font-family: sans-serif;
+}
+p .c{
+    /* background-color: white ; */
+    width: 81%;
+    margin: auto;
+}
+
+a{
+    color:rgb(171, 171, 171) ;
+    text-decoration: none;
+}
+.navv{
+    border-bottom: 1px solid grey;
+}
+.navbar{
+    padding: 0;
+}
+.active{
+    color: rgb(219, 88, 88);
+    border-bottom: 4px solid;
+    padding-bottom: 10px;
+    border-color:rgb(209 47 47); 
+}
+.aa2{
+    margin-left: 22px;
+}

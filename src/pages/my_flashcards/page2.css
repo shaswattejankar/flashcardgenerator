@@ -1,0 +1,99 @@
+.container-flash{
+    display: inline-flex;
+    padding-top: 50px;
+}
+
+/* ----------------------- */
+.flash-deck{
+    max-width: 1132px;
+}
+.deck-row{
+    justify-content: left;
+    margin-left: 48px;
+}
+/* ----------------------- */
+.card{
+    padding: 14px;
+}
+.end{
+    align-items: center;
+    width: 338px;
+    height: 235px;
+    justify-content: center;
+    text-align: left;
+    padding: 13px;
+    margin-top: 14px;
+    margin-left: 14px;
+}
+
+.card-body{
+    padding: 0px;
+}
+.card-body > img {
+    padding-left: 12px;
+}
+.card-body > p {
+    margin-top: 13px;
+    margin-bottom: 1.2rem;
+}
+
+.card-img{
+    display: flex;
+    width:90px;
+    clip-path: circle();
+    padding: 0px;
+}
+.card-title{
+    font-family: 'DM Sans';
+}
+.card-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 21px;
+    max-height: 48px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #787878;
+}
+.header{
+    padding-top: 14px;
+    padding-left: 12px;
+    height: 83px;
+}
+.group-desc{
+    height: 66px;
+}
+.footer{
+    padding-left: 12px;
+}
+.view-btn{
+    padding: 0px;
+
+    --bs-btn-color: #d12f2f;
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+    --bs-btn-hover-border-color: #f00;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-hover-color: #ff2800;
+}
+.delete-card-btn{
+    --bs-btn-color: #f4131399;
+    --bs-btn-border-color: nonw;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-color: #f50000c7;
+}
+
+.reset-div{
+    padding: 40px 20px 20px 20px;
+    margin: 40px;
+    margin-top: 60px;
+}
+
+.reset, .delete{
+    margin-right: 3px;
+    margin-left: 40px;
+    font-size: 15px;
+    font-family: serif;
+}
