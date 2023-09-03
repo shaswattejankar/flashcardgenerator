@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { reset, popIt, allFlashcards, deleteThis } from "./cardSlice";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { Link, Route, Routes } from "react-router-dom";
 import { TbTrash } from "react-icons/tb";
 
 export const CardData = () => {
+  const [showCards, setShowCards] = useState(6);
+  const [see, setSee] = useState("");
   const flashcards = useSelector(allFlashcards);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (flashcards.length > 6) {
+      return setSee("");
+    } else if (flashcards.length <= 6) {
+      return setSee("d");
+    }
+  }, [flashcards]);
+
   const renderedCard = flashcards
+    .slice(0, showCards)
     .map((flashcard) => {
       const id = flashcard.id;
       const flash = JSON.parse(flashcard.flash);
@@ -80,26 +91,49 @@ export const CardData = () => {
     <section className="container container-fluid flash-deck">
       <div className="d-flex flex-row flex-wrap deck-row">{renderedCard}</div>
       <div className="container container see-all">
-        <button className="btn btn-light see-all-btn">
-          <i>see all
-          {
-            <BsArrowRight
-              style={{ fontSize: "23px", color: "#ef2121" }}
-            />
-          }</i>
-        </button>
+        {showCards == 6 ? (
+          <button
+            className="btn btn-light see-all-btn"
+            onClick={() => {
+              setShowCards(flashcards.length);
+            }}
+            disabled={see}
+          >
+            <i>
+              see all
+              {
+                <BsArrowRight
+                  style={{ fontSize: "18px", color: "#fa2222cc" }}
+                />
+              }
+            </i>
+          </button>
+        ) : (
+          <button
+            className="btn btn-light see-all-btn"
+            onClick={() => {
+              setShowCards(6);
+            }}
+            disabled={see}
+          >
+            <i>
+              {<BsArrowLeft style={{ fontSize: "18px", color: "#fa2222cc" }} />}
+              see less
+            </i>
+          </button>
+        )}
       </div>
-      <div className="d-flex flex-row justify-content-center align-items-center reset-div">
+      <div className="d-flex flex-row justify-content-center align-items-center delete-all-div">
         <button
           type="button"
-          className="btn btn-outline-danger reset"
+          className="btn btn-outline-danger delete-all"
           onDoubleClick={(e) => dispatch(reset())}
         >
           Delete all
         </button>
         <button
           type="button"
-          className="btn btn-outline-danger delete"
+          className="btn btn-outline-danger pop"
           onClick={(e) => dispatch(popIt())}
         >
           Delete last

@@ -45,7 +45,7 @@ function Page3() {
       </div>
 
       <div className="container">
-        <div className="d-flex flex-row justify-content-center align-self-start content">
+        <div className="d-flex flex-row justify-content-center flex-wrap align-self-start content">
           <div className="col col-left shadow-sm styler">
             <div className="row d-flex flex-column flex-item align-items-start">
               <div className="row row-1">

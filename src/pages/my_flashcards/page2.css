@@ -85,15 +85,37 @@
     --bs-btn-hover-color: #f50000c7;
 }
 
-.reset-div{
+
+.see-all{
+    margin: 30px 0px 0px 30px;
+}
+.see-all .see-all-btn{
+    padding: 0px;
+    --bs-btn-color: #fa2222cc;
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+    --bs-btn-hover-border-color: #f00;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-hover-color: #ff2800;
+    --bs-btn-active-color: #f00;
+    --bs-btn-active-bg: #ffffff00;
+    --bs-btn-active-border-color: #babbbc00;
+    --bs-btn-active-shadow: inset 0 3px 5px rgb(0 0 0 / 0%);
+    --bs-btn-disabled-color: #fb4a42;
+    --bs-btn-disabled-bg: #f8f9fa00;
+}
+
+.delete-all-div{
     padding: 40px 20px 20px 20px;
-    margin: 40px;
+    margin: 0px 0px 0px 35px;
     margin-top: 60px;
 }
 
-.reset, .delete{
+.delete-all, .pop{
     margin-right: 3px;
-    margin-left: 40px;
+    margin-left: 33px;
     font-size: 15px;
     font-family: serif;
+    --bs-btn-border-color :none;
 }
