@@ -12,11 +12,11 @@ function App() {
 
     <div className="App">
             <Routes>
-              <Route path="/" element={<Header />}>
+              <Route exact path="/" element={<Header />}>
                 <Route index element={<Page1 />} />
-                <Route path="flashes/*" element={<Page2 />} />
-                <Route path="flash-details/*" element={<Page3 />} />
-                <Route path="modal" element={<Center />} />
+                <Route exact path="flashes/*" element={<Page2 />} />
+                <Route exact path="flash-details/*" element={<Page3 />} />
+                <Route exact path="modal" element={<Center />} />
               </Route>
             </Routes>
     </div>
