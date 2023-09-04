@@ -15,7 +15,7 @@ const persistor = persistStore(Store);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/flashcardgenerator/'>
       <Provider store={Store}>
         <PersistGate persistor={persistor}>
           <App />
