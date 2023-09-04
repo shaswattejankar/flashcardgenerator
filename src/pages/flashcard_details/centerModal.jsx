@@ -11,7 +11,7 @@ function myFunction(){
   alert("link copied!");  //to confirm that the link was successfully copied
 }
 
-function MyVerticallyCenteredModal(props) {
+export function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}

@@ -9,9 +9,7 @@ const page1 = () => {
     return(
         <>
             <Container className="container2">
-
                 <FormikForm/>
-            
             </Container>      
         </>   
     )

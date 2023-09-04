@@ -1,23 +1,26 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { FormikForm } from './FormikForm';
 
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from "react-redux";
-import Store from "./store/Store";
+import Store from "../../store/Store";
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 
-test('renders App', () => {
-  const persistor = persistStore(Store);
+describe('FormikForm',()=>{
 
-  render(
-          <BrowserRouter>
+    it('renders FormikForm properly ', async ()=>{
+        const persistor = persistStore(Store);
+
+        render(
             <Provider store={Store}>
               <PersistGate persistor={persistor}>
-                <App />
+                <FormikForm/>
               </PersistGate>
             </Provider>
-          </BrowserRouter>
         );
-  screen.debug();
-});
+        
+        
+    })
+
+
+})
