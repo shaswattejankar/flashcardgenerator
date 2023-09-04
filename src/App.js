@@ -14,9 +14,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Header />}>
           <Route index element={<Page1 />} />
-          <Route exact path="flashes/*" element={<Page2 />} />
-          <Route exact path="flash-details/*" element={<Page3 />} />
-          <Route exact path="modal" element={<Center />} />
+          <Route  path="flashes/*" element={<Page2 />} />
+          <Route  path="flash-details/*" element={<Page3 />} />
+          <Route  path="modal" element={<Center />} />
         </Route>
       </Routes>
     </div>
