@@ -45,7 +45,7 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
 
   return (
     <div className="row gy-3 d-flex flex-row justify-content-evenly term-box">
-      <div className="col col-4 col-sm-5 d-flex flex-row">
+      <div className="col col-sm-5 col-xs-6 d-flex flex-row">
         <div className="col col-2 term-index">{index + 1}</div>
         <div className="col col-10">
           <label htmlFor={`termList[${index}].termName`} className="termLabel">
@@ -63,8 +63,8 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
           <ErrorMessage name={`termList[${index}].termName`} />
         </div>
       </div>
-      <div className="col col-6 col-sm-6 d-flex flex-row ">
-        <div className="col col-8">
+      <div className="col col-sm-6 col-xs-6 d-flex flex-row ">
+        <div className="col col-7 col-xs-5">
           <label htmlFor={`termList[${index}].termDef`} className="termLabel">
             Enter Definiton*
           </label>
@@ -78,11 +78,11 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
           />
           <ErrorMessage name={`termList[${index}].termDef`} />
         </div>
-        <div className="col col-4 ">
-          <div className="row d-flex flex-row justify-content-around">
+        <div className="col col-5 col-xs-5">
+          {/* <div className="row d-flex flex-row justify-content-around"> */}
             {showImage.value ? (
               <>
-                <div className="col col-10">
+                <div className="col col-10 col-xs-10">
                   <img
                     src={termImage.value}
                     alt="nahi"
@@ -102,7 +102,7 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
                     style={{ display: "none" }}
                   />
                 </div>
-                <div className="col col-1 edit-btn-div">
+                <div className="col col-1 col-xs-10 edit-btn-div">
                   <button
                     type="button"
                     className="btn btn-outline-primary edit-btn"
@@ -135,10 +135,10 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
                 />
               </button>
             )}
-          </div>
+          {/* </div> */}
         </div>
       </div>
-      <div className="col col-2 col-sm-1 d-flex flex-row justify-content-end">
+      <div className="col col-2 col-sm-1 col-xs-6 d-flex flex-row justify-content-end">
         {index > 0 && (
           <button
             type="button"
@@ -222,7 +222,7 @@ export const FormikForm = () => {
             <div className="container mt-5 shadow-sm outer-box1">
               <div className="row d-flex flex-row justify-content-left align-items-center box1">
                 <div className="row align-items-center">
-                  <div className="col col-7 col-sm-6 form-group one">
+                  <div className="col col-sm-6  col-7 form-group one">
                     <label htmlFor="groupName">Create Group*</label> <br />
                     <Field
                       name="groupName"
@@ -233,7 +233,7 @@ export const FormikForm = () => {
                     />
                     <ErrorMessage name="groupName" />
                   </div>
-                  <div className="col col-5 col-sm-6 form-button">
+                  <div className="col col-sm-6 col-5 form-button">
                     {groupImg ? (
                       <>
                         <img

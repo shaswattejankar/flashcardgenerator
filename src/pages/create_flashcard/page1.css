@@ -160,8 +160,9 @@ label{
 .ti-btn{
     margin: 26px 0px 0px 35px;
     color: #005dff;
-    height: 40px;
+    height: auto;
     width: auto;
+    padding: 8px 8px 8px 8px;
 }
 .term-imgs{
     margin-left: 42px;
