@@ -119,3 +119,20 @@
     font-family: serif;
     --bs-btn-border-color :none;
 }
+
+@media (max-width:1400px) {
+    .deck-row{
+        justify-content: center !important;
+    }
+}
+@media (max-width:991px) {
+    .deck-row{
+        margin-left: 0px;
+    }
+    .end{
+        margin-left: 0px;
+    }
+    .see-all{
+        margin-left:0px;
+    }
+}

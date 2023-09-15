@@ -8,7 +8,7 @@
 
 .inner{
     white-space: nowrap;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
 }
 .item{
     width: 530px;
@@ -61,4 +61,32 @@
 
 .indicators{
     margin-top: 20px;
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    .carousel-flex{
+        padding-top:20px;
+        padding-bottom: 0px;
+    }
+    .carousel{
+        height: 400px;
+    }
+    .item{
+        display: inline-flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width:320px) and (max-width:425px) {
+    .carousel-flex{
+        padding-top:20px;
+        padding-bottom: 0px;
+    }
+    .carousel{
+        height: 400px;
+    }
+    .item{
+        display: inline-flex;
+        flex-direction: column;
+    }
 }

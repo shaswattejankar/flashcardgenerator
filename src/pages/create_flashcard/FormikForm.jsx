@@ -44,10 +44,10 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
   }
 
   return (
-    <div className="row gy-3 d-flex flex-row justify-content-evenly term-box">
-      <div className="col col-sm-5 col-xs-6 d-flex flex-row">
+    <div className="row gy-3 gx-sm-5 d-flex flex-xs-column flex-sm-column flex-md-row justify-content-evenly term-box">
+      <div className="col col-xs-5 col-md-5 d-flex flex-row">
         <div className="col col-2 term-index">{index + 1}</div>
-        <div className="col col-10">
+        <div className="col col-10 ">
           <label htmlFor={`termList[${index}].termName`} className="termLabel">
             Enter Term*
           </label>
@@ -63,8 +63,8 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
           <ErrorMessage name={`termList[${index}].termName`} />
         </div>
       </div>
-      <div className="col col-sm-6 col-xs-6 d-flex flex-row ">
-        <div className="col col-7 col-xs-5">
+      <div className="col col-12 col-xs-5 col-md-6 d-flex flex-column flex-sm-column flex-md-row def-img">
+        <div className="col col-5 col-sm-11 col-md-8 def">
           <label htmlFor={`termList[${index}].termDef`} className="termLabel">
             Enter Definiton*
           </label>
@@ -72,17 +72,17 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
           <Field
             name={`termList[${index}].termDef`}
             type="text"
-            className="termInput d-input border-style"
+            className="termInput d-input border-style defInput"
             disabled={mySetD}
             placeholder="Enter definition"
           />
           <ErrorMessage name={`termList[${index}].termDef`} />
         </div>
-        <div className="col col-5 col-xs-5">
+        <div className="col col-7 col-sm-5 col-md-4 justify-content-sm-center btn-img">
           {/* <div className="row d-flex flex-row justify-content-around"> */}
             {showImage.value ? (
               <>
-                <div className="col col-10 col-xs-10">
+                <div className="col col-9 col-xs-9">
                   <img
                     src={termImage.value}
                     alt="nahi"
@@ -102,7 +102,7 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
                     style={{ display: "none" }}
                   />
                 </div>
-                <div className="col col-1 col-xs-10 edit-btn-div">
+                <div className="col col-2 col-xs-3 edit-btn-div">
                   <button
                     type="button"
                     className="btn btn-outline-primary edit-btn"
@@ -138,7 +138,7 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
           {/* </div> */}
         </div>
       </div>
-      <div className="col col-2 col-sm-1 col-xs-6 d-flex flex-row justify-content-end">
+      <div className="col col-xs-2 col-md-1 d-flex justify-content-center justify-content-xs-center justify-content-sm-center delete-div">
         {index > 0 && (
           <button
             type="button"

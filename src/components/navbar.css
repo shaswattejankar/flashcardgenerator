@@ -36,3 +36,23 @@ a{
 .aa2{
     margin-left: 22px;
 }
+
+
+@media (min-width:1465px) {
+    .container1{
+        max-width: 1118px;
+    }
+}
+
+
+@media (min-width:1400px) {
+    /* .container1{
+        max-width: 1118px;
+    } */
+}
+
+@media (max-width:1438px) {
+    .container1 .c{
+        margin-left:0px;
+    }
+}

@@ -2,7 +2,6 @@
     margin-left: 123px;
 }
 
-
 .button{
     border: none;
     background: none  ;
@@ -80,7 +79,8 @@ ul{
 }   
 
 .carousel-flex{
-    padding: 20px;
+    /* padding: 0px; */
+    padding-bottom:14px;
     background: none;
 
 }
@@ -132,4 +132,10 @@ ul{
     height:inherit;
     background: none;
     border: none;
+}
+
+@media (max-width:1400px) {
+    .heading-container, .content{
+        margin-left: 0px;
+    }
 }
