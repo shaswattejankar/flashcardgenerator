@@ -18,7 +18,10 @@ This website can be used to create decks of Flashcards grouped by name, image, a
 ### About Website
 ----
 
-This website as mentioned above is a website made as part of a frontend project for the Almabetter course. Follow the given link to get started with creating your own flashcards and use them as you see fit.
+This website as mentioned above is a website made as part of a frontend project for the Almabetter course. Follow the given link to get started with creating your own flashcards and use them as you see fit. This website is live and hosted on GitHub Pages.
+
+![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+
 <br/>
 
 ### Getting Started
@@ -65,6 +68,6 @@ The following are used to create the website
 ### Relevant Links
 ---
 
-1. Deployed at: https://shaswattejankar.github.io/flashcardgenerator/
-2. Link for cloning: https://github.com/shaswattejankar/flashcardgenerator.git
+1. Deployed on GitHub Pages: https://shaswattejankar.github.io/flashcardgenerator/
+2. Link for local cloning: https://github.com/shaswattejankar/flashcardgenerator.git
 
