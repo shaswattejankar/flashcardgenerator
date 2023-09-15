@@ -24,10 +24,10 @@ const theSchema = Yup.object().shape({
   termList: Yup.array().of(
     Yup.object().shape({
       termName: Yup.string()
-        .required("required")
+        .required("*Required")
         .max(20, "Must be 20 characters or less"),
       termDef: Yup.string()
-        .required("required")
+        .required("*Required")
         .max(120, "Too Long! must be less than 500 characters"),
     })
   ),
@@ -58,7 +58,7 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
             className="termInput t-input border-style"
             id={index}
             disabled={mySetD}
-            placeholder="Enter term name"
+            placeholder="Enter A Term Here..."
           />
           <ErrorMessage name={`termList[${index}].termName`} />
         </div>
@@ -74,12 +74,11 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
             type="text"
             className="termInput d-input border-style defInput"
             disabled={mySetD}
-            placeholder="Enter definition"
+            placeholder="Enter The Definition Here..."
           />
           <ErrorMessage name={`termList[${index}].termDef`} />
         </div>
         <div className="col col-7 col-sm-5 col-md-4 justify-content-sm-center btn-img">
-          {/* <div className="row d-flex flex-row justify-content-around"> */}
             {showImage.value ? (
               <>
                 <div className="col col-9 col-xs-9">
@@ -135,7 +134,6 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
                 />
               </button>
             )}
-          {/* </div> */}
         </div>
       </div>
       <div className="col col-xs-2 col-md-1 d-flex justify-content-center justify-content-xs-center justify-content-sm-center delete-div">
@@ -202,7 +200,6 @@ export const FormikForm = () => {
           values.groupImage = groupImg;
           setTimeout(() => {
             console.log("submitted");
-            // alert(JSON.stringify(values, null, 2));
           }, 400);
           if (values) {
             dispatch(
@@ -222,16 +219,16 @@ export const FormikForm = () => {
             <div className="container mt-5 shadow-sm outer-box1">
               <div className="row d-flex flex-row justify-content-left align-items-center box1">
                 <div className="row align-items-center">
-                  <div className="col col-sm-6  col-7 form-group one">
+                  <div className="col col-sm-6 col-7 form-group one">
                     <label htmlFor="groupName">Create Group*</label> <br />
                     <Field
                       name="groupName"
                       className="border-style cg-input"
                       type="text"
                       onKeyUp={changeDisable}
-                      placeholder="Enter group name"
+                      placeholder="Enter Group Name..."
                     />
-                    <ErrorMessage name="groupName" />
+                    <ErrorMessage name="groupName"/>
                   </div>
                   <div className="col col-sm-6 col-5 form-button">
                     {groupImg ? (
@@ -280,13 +277,13 @@ export const FormikForm = () => {
                 </div>
                 <div className="row d-flex flex-row justify-content-left mb-2">
                   <div className="form-group desc">
-                    <label htmlFor="groupDesc">Add description</label>
+                    <label htmlFor="groupDesc">Add Description*</label>
                     <br />
                     <Field
                       name="groupDesc"
                       as="textarea"
                       className="text-area border-style"
-                      placeholder="Describe the roles, resposibilities, skills required and help understand the group better."
+                      placeholder="Describe the roles, resposibilities, skills required and help understand the group better..."
                     />{" "}
                     <br />
                     <ErrorMessage name="groupDesc" />

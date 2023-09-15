@@ -142,10 +142,6 @@ label{
 .termInput{
     width: -webkit-fill-available;
 }
-.edit-btn-div{
-    display: inline-grid;
-    padding-left: 0px;
-}
 
 .edit-btn{
     border:0px;
@@ -166,7 +162,7 @@ label{
     font-size: 15px;
 }
 .term-imgs{
-    margin-left: 34px;
+    margin-left: 79px;
     height: 60px;
     width: auto;
     margin-top : 18px;
@@ -183,7 +179,6 @@ label{
 .addmore-btn {
     margin: 20px 0px 32px 55px;
     width:auto;
-    
 }
 
 .i{
@@ -195,7 +190,9 @@ label{
     align-items: center;
 }
 .edit-btn-div{
+    display: inline-grid;
     margin-left: 45px;
+    padding-left: 26px;
 }
 
 .delete-div{

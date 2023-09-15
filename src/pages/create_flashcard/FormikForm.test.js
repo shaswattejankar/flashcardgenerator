@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { FormikForm } from './FormikForm';
 
 import { Provider } from "react-redux";
