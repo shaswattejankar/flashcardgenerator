@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
-import "./page3.css";
+import "./FlashcardDetailsPage.css";
 import { FaArrowLeft } from "react-icons/fa";
 import Carousel from "./Carousel";
 import CenterModal from "./centerModal";
 
-function Page3() {
+// Page 3: To show details of a particular flashcard group
+function FlashcardDetailsPage() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const location = useLocation();
   const flashcard = location.state?.id;
 
+  // For rendering all the term names of the flashcard
   const term_name_list = flashcard.flash.termList.map((each_term, index) => (
     <a
       className={`list-group-item list-group-item-action ${
@@ -18,6 +20,7 @@ function Page3() {
       }`}
       data-toggle="list"
       role="tab"
+      // for carousel data navigation
       onClick={() => setActiveIndex(index)}
       key={index}
     >
@@ -27,6 +30,7 @@ function Page3() {
 
   return (
     <section>
+      {/* for flashcard group details */}
       <div className="container info">
         <div className="d-flex flex-row justify-content-start heading-container">
           <div className="p-2">
@@ -52,7 +56,6 @@ function Page3() {
                 <b>Flaschards</b>
               </div>
               <div className="row row-2">
-                {/* {flashcardTerms(flashcard.flash.termList)} */}
                 <div className="list-group list-group-flush" role="tablist">
                   {term_name_list}
                 </div>
@@ -60,8 +63,8 @@ function Page3() {
             </div>
           </div>
 
+          {/* Carousel goes here */}
           <div className="col col-mid col-sm-6 shadow-sm styler car-styler">
-            {/* Carousel goes here */}
             <div className="d-flex justify-content-center flex-column align-items-center carousel-flex">
               <Carousel
                 termList={flashcard.flash.termList}
@@ -71,8 +74,8 @@ function Page3() {
             </div>
           </div>
 
+          {/* link copy button goes here */}
           <div className="col d-flex flex-column col-right">
-            {/* link copy button goes here */}
             <div className="d-flex flex-item shadow-sm util-section">
               <div className="d-flex align-items-center justify-content-center">
                 <CenterModal />
@@ -107,9 +110,9 @@ function Page3() {
       </div>
 
       <Routes>
-        <Route path="/flashes" element={<page3 />} />
+        <Route path="/flashes" element={<FlashcardDetailsPage />} />
       </Routes>
     </section>
   );
 }
-export default Page3;
+export default FlashcardDetailsPage;

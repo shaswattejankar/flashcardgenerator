@@ -6,6 +6,7 @@ import {
 } from "react-icons/md";
 import { nanoid } from "@reduxjs/toolkit";
 
+// To rendering each image and definition for the selected Term
 const CarouselItem = ({ ci, cd }) => {
   return (
     <div className="item" key={nanoid()}>
@@ -19,6 +20,7 @@ const CarouselItem = ({ ci, cd }) => {
   );
 };
 
+// To render and control the data rendered in the Carousel
 const Carousel = ({ termList, activeIndex, setActiveIndex }) => {
   const items = termList;
 
@@ -41,6 +43,7 @@ const Carousel = ({ termList, activeIndex, setActiveIndex }) => {
           return <CarouselItem ci={item.termImage} cd={item.termDef} />;
         })}
       </div>
+      {/* Navigation Buttons */}
       <div className="carousel-buttons">
         <button
           onClick={() => updateIndex(activeIndex - 1)}

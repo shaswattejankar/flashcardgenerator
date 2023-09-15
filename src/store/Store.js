@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
-import { persistReducer,
+import {
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -11,15 +12,18 @@ import { persistReducer,
 import { combineReducers } from "@reduxjs/toolkit";
 import cardReducer from "../features/cardSlice";
 
+// get our locally stored data if available
+
 const persistConfig = {
-  key : "root",
+  key: "root",
   version: 1,
-  storage
+  storage,
 };
 
+// to combine reducers for passing to configureStore
 const reducer = combineReducers({
   flashcards: cardReducer,
-})
+});
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 

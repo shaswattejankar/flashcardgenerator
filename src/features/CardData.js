@@ -4,13 +4,16 @@ import { allFlashcards, deleteThis } from "./cardSlice";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { Link, Route, Routes } from "react-router-dom";
 import { TbTrash } from "react-icons/tb";
+import FlashcardDetailsPage from "../components/FlashcardDetails/FlashcardDetailsPage";
 
+//To render all the flashcard details from Store
 export const CardData = () => {
   const [showCards, setShowCards] = useState(6);
   const [see, setSee] = useState("");
   const flashcards = useSelector(allFlashcards);
   const dispatch = useDispatch();
 
+  // To set see all-> button disability
   useEffect(() => {
     if (flashcards.length > 6) {
       return setSee("");
@@ -19,6 +22,7 @@ export const CardData = () => {
     }
   }, [flashcards]);
 
+  // Map the data from Store and Render all the Group details as a deck
   const renderedCard = flashcards
     .slice(0, showCards)
     .map((flashcard) => {
@@ -60,6 +64,7 @@ export const CardData = () => {
                 to={`/flash-details/${flashcard.id}`}
                 state={{ id: flashcard }}
               >
+                {/* To view flsahcard terms of a particular flashcards */}
                 <button className="btn btn-light view-btn">
                   View Cards{" "}
                   {
@@ -71,6 +76,7 @@ export const CardData = () => {
               </Link>
             </div>
             <div className="col col-2">
+              {/* To delete any Flashcard Group */}
               <button
                 type="button"
                 className="btn btn-outline-secondary float-end delete-card-btn"
@@ -82,15 +88,20 @@ export const CardData = () => {
           </div>
         </div>
         <Routes>
-          <Route path={`/flash-details/:flashcardId`} element={<page3 />} />
+          <Route
+            path={`/flash-details/:flashcardId`}
+            element={<FlashcardDetailsPage />}
+          />
         </Routes>
       </div>
     ));
 
   return (
     <section className="container container-fluid flash-deck">
+      {/* To show all the Flashcard Groups */}
       <div className="d-flex flex-row flex-wrap deck-row">{renderedCard}</div>
       <div className="container container see-all">
+        {/* see all or see less button */}
         {showCards === 6 ? (
           <button
             className="btn btn-light see-all-btn"

@@ -14,9 +14,10 @@ import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { cardAdded } from "../../features/cardSlice";
 
+// Validation Schema for FORMIK
 const theSchema = Yup.object().shape({
   groupName: Yup.string()
-    .max(15, "Must be 15 characters or less")
+    .max(20, "Must be 20 characters or less")
     .required("*Required"),
   groupDesc: Yup.string()
     .max(150, "Must be 150 characters or less")
@@ -33,11 +34,13 @@ const theSchema = Yup.object().shape({
   ),
 });
 
+// For each term inputs i.e. term name, term definition and image button
 const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
   const [termImage] = useField(`termList[${index}].termImage`);
   const [showImage] = useField(`termList[${index}].showImage`);
   const inputTermFile = useRef(null);
 
+  // For focusing on Term name input on edit button click
   function focusOnTermInput(id) {
     const elem = document.getElementById(id);
     elem.focus();
@@ -79,49 +82,18 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
           <ErrorMessage name={`termList[${index}].termDef`} />
         </div>
         <div className="col col-7 col-sm-5 col-md-4 justify-content-sm-center btn-img">
-            {showImage.value ? (
-              <>
-                <div className="col col-9 col-xs-9">
-                  <img
-                    src={termImage.value}
-                    alt="nahi"
-                    className="term-imgs"
-                    onClick={() => {
-                      inputTermFile.current.click();
-                    }}
-                  />
-                  <input
-                    name={`termList[${index}].termImage`}
-                    type="file"
-                    id="termFile"
-                    ref={inputTermFile}
-                    onChange={({ target }) =>
-                      handleFileChange(index, target.files[0])
-                    }
-                    style={{ display: "none" }}
-                  />
-                </div>
-                <div className="col col-2 col-xs-3 edit-btn-div">
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary edit-btn"
-                    onClick={() => focusOnTermInput(index)}
-                  >
-                    <TbEdit style={{ fontSize: "20px" }} />
-                  </button>
-                </div>
-              </>
-            ) : (
-              <button
-                type="button"
-                className="btn btn-outline-primary light ti-btn"
-                onClick={() => {
-                  inputTermFile.current.click();
-                }}
-                htmlFor="termFile"
-                disabled={mySetD}
-              >
-                Select Image
+          {/* Render image instead of Button on image upload */}
+          {showImage.value ? (
+            <>
+              <div className="col col-9 col-xs-9">
+                <img
+                  src={termImage.value}
+                  alt="nahi"
+                  className="term-imgs"
+                  onClick={() => {
+                    inputTermFile.current.click();
+                  }}
+                />
                 <input
                   name={`termList[${index}].termImage`}
                   type="file"
@@ -132,11 +104,44 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
                   }
                   style={{ display: "none" }}
                 />
-              </button>
-            )}
+              </div>
+              <div className="col col-2 col-xs-3 edit-btn-div">
+                <button
+                  type="button"
+                  className="btn btn-outline-primary edit-btn"
+                  onClick={() => focusOnTermInput(index)}
+                >
+                  <TbEdit style={{ fontSize: "20px" }} />
+                </button>
+              </div>
+            </>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-outline-primary light ti-btn"
+              onClick={() => {
+                inputTermFile.current.click();
+              }}
+              htmlFor="termFile"
+              disabled={mySetD}
+            >
+              Select Image
+              <input
+                name={`termList[${index}].termImage`}
+                type="file"
+                id="termFile"
+                ref={inputTermFile}
+                onChange={({ target }) =>
+                  handleFileChange(index, target.files[0])
+                }
+                style={{ display: "none" }}
+              />
+            </button>
+          )}
         </div>
       </div>
       <div className="col col-xs-2 col-md-1 d-flex justify-content-center justify-content-xs-center justify-content-sm-center delete-div">
+        {/* Delete button for every newly added term inputs */}
         {index > 0 && (
           <button
             type="button"
@@ -151,11 +156,13 @@ const Term = ({ index, handleRemove, handleFileChange, mySetD }) => {
   );
 };
 
+// Function for main form made with FORMIK
 export const FormikForm = () => {
   const [setD, changeSetD] = useState("s");
   const [groupImg, setGroupImg] = useState("");
   const dispatch = useDispatch();
 
+  // for handling disabled state of term inputs
   const changeDisable = (e) => {
     if (e.target.value) {
       changeSetD("");
@@ -164,6 +171,7 @@ export const FormikForm = () => {
     }
   };
 
+  // for image upload and render using Base64
   const inputGroupFile = useRef(null);
   const handlegroupchange = (e) => {
     const uri = e.target.files[0];
@@ -196,6 +204,7 @@ export const FormikForm = () => {
           ],
         }}
         validationSchema={theSchema}
+        // Handling Submission
         onSubmit={(values, { setSubmitting, resetForm }) => {
           values.groupImage = groupImg;
           setTimeout(() => {
@@ -228,7 +237,7 @@ export const FormikForm = () => {
                       onKeyUp={changeDisable}
                       placeholder="Enter Group Name..."
                     />
-                    <ErrorMessage name="groupName"/>
+                    <ErrorMessage name="groupName" />
                   </div>
                   <div className="col col-sm-6 col-5 form-button">
                     {groupImg ? (
@@ -294,6 +303,7 @@ export const FormikForm = () => {
 
             <div className="container mt-5 shadow-sm outer-box2">
               <div className="row d-flex flex-column justify-content-center align-items-center box2 disabled">
+                {/* For adding new term inputs on button click */}
                 <FieldArray name="termList">
                   {({ form: { values }, ...fieldArrayHelpers }) => {
                     const addOnClick = () => {
@@ -351,6 +361,7 @@ export const FormikForm = () => {
                 </FieldArray>
               </div>
             </div>
+            {/* form data Submit button */}
             <div className="row mt-4 d-flex flex-row justify-content-center">
               <button type="submit" className="btn btn-danger my-3 btn-2">
                 Create
