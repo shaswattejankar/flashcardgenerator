@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { reset, popIt, allFlashcards, deleteThis } from "./cardSlice";
+import { allFlashcards, deleteThis } from "./cardSlice";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { Link, Route, Routes } from "react-router-dom";
 import { TbTrash } from "react-icons/tb";
@@ -91,7 +91,7 @@ export const CardData = () => {
     <section className="container container-fluid flash-deck">
       <div className="d-flex flex-row flex-wrap deck-row">{renderedCard}</div>
       <div className="container container see-all">
-        {showCards == 6 ? (
+        {showCards === 6 ? (
           <button
             className="btn btn-light see-all-btn"
             onClick={() => {
@@ -122,22 +122,6 @@ export const CardData = () => {
             </i>
           </button>
         )}
-      </div>
-      <div className="d-flex flex-row justify-content-center align-items-center delete-all-div">
-        <button
-          type="button"
-          className="btn btn-outline-danger delete-all"
-          onDoubleClick={(e) => dispatch(reset())}
-        >
-          Delete all
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-danger pop"
-          onClick={(e) => dispatch(popIt())}
-        >
-          Delete last
-        </button>
       </div>
     </section>
   );

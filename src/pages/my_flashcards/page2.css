@@ -1,21 +1,24 @@
-.container-flash{
+.container-flash {
     display: inline-flex;
     padding-top: 50px;
 }
 
 /* ----------------------- */
-.flash-deck{
+.flash-deck {
     max-width: 1132px;
 }
-.deck-row{
+
+.deck-row {
     justify-content: left;
     margin-left: 48px;
 }
+
 /* ----------------------- */
-.card{
+.card {
     padding: 14px;
 }
-.end{
+
+.end {
     align-items: center;
     width: 338px;
     height: 235px;
@@ -26,27 +29,31 @@
     margin-left: 14px;
 }
 
-.card-body{
+.card-body {
     padding: 0px;
 }
-.card-body > img {
+
+.card-body>img {
     padding-left: 12px;
 }
-.card-body > p {
+
+.card-body>p {
     margin-top: 13px;
     margin-bottom: 1.2rem;
 }
 
-.card-img{
+.card-img {
     display: flex;
-    width:90px;
+    width: 90px;
     clip-path: circle();
     padding: 0px;
 }
-.card-title{
+
+.card-title {
     font-family: 'DM Sans';
 }
-.card-text{
+
+.card-text {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -56,18 +63,22 @@
     -webkit-box-orient: vertical;
     color: #787878;
 }
-.header{
+
+.header {
     padding-top: 14px;
     padding-left: 12px;
     height: 83px;
 }
-.group-desc{
+
+.group-desc {
     height: 66px;
 }
-.footer{
+
+.footer {
     padding-left: 12px;
 }
-.view-btn{
+
+.view-btn {
     padding: 0px;
 
     --bs-btn-color: #d12f2f;
@@ -78,18 +89,19 @@
     --bs-btn-hover-border-color: none;
     --bs-btn-hover-color: #ff2800;
 }
-.delete-card-btn{
+
+.delete-card-btn {
     --bs-btn-color: #f4131399;
     --bs-btn-border-color: nonw;
     --bs-btn-hover-bg: none;
     --bs-btn-hover-color: #f50000c7;
 }
 
-
-.see-all{
+.see-all {
     margin: 30px 0px 0px 30px;
 }
-.see-all .see-all-btn{
+
+.see-all .see-all-btn {
     padding: 0px;
     --bs-btn-color: #fa2222cc;
     --bs-btn-bg: none;
@@ -106,33 +118,22 @@
     --bs-btn-disabled-bg: #f8f9fa00;
 }
 
-.delete-all-div{
-    padding: 40px 20px 20px 20px;
-    margin: 0px 0px 0px 35px;
-    margin-top: 60px;
-}
-
-.delete-all, .pop{
-    margin-right: 3px;
-    margin-left: 33px;
-    font-size: 15px;
-    font-family: serif;
-    --bs-btn-border-color :none;
-}
-
 @media (max-width:1400px) {
-    .deck-row{
+    .deck-row {
         justify-content: center !important;
     }
 }
+
 @media (max-width:991px) {
-    .deck-row{
+    .deck-row {
         margin-left: 0px;
     }
-    .end{
+
+    .end {
         margin-left: 0px;
     }
-    .see-all{
-        margin-left:0px;
+
+    .see-all {
+        margin-left: 0px;
     }
 }

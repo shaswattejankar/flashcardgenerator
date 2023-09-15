@@ -199,7 +199,6 @@ label{
 }
 
 .delete-div{
-    padding-top: 16px;
     padding-right: 0px;
     padding-left: 40px;
 }
@@ -251,7 +250,7 @@ label{
 
 @media (max-width:376px) {
     .def-img{
-        padding-right: 0px;
+        padding-right: 14px;
         margin-left: 52px;
     }
     .def{
