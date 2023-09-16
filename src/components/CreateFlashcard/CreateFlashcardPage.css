@@ -200,9 +200,20 @@ label{
     padding-left: 40px;
 }
 
-@media (max-width:576px) {
-    .def{
-        width:fit-content;
+@media (max-width: 1374px){
+    .term-imgs{
+        margin-left:58px;
+    }
+}
+
+@media (max-width: 1160px){
+    .term-imgs{
+        margin-left:45px;
+    }
+}
+@media (max-width: 1042px){
+    .term-imgs{
+        margin-left:36px;
     }
 }
 
@@ -212,12 +223,27 @@ label{
     }
 }
 
+@media (max-width: 961px){
+    .term-imgs{
+        margin-left:26px;
+    }
+}
+
 @media (max-width:768px) {
     .term-box{
         align-items: center;
     }
     .def-img{
         align-items: center;
+    }
+    .term-imgs{
+        margin-left: 22px;
+    }
+}
+
+@media (max-width:576px) {
+    .def{
+        width:fit-content;
     }
 }
 
@@ -256,4 +282,11 @@ label{
     .defInput{
         width: 179px;
     }
+    .btn-img{
+        padding-right:18px;
+    }
+}
+
+@media (max-width:320px){
+    
 }

@@ -178,7 +178,6 @@ export const FormikForm = () => {
     var reader = new FileReader();
     reader.readAsDataURL(uri);
     reader.onload = function () {
-      console.log(reader.result);
       setGroupImg(reader.result);
     };
     reader.onerror = function (error) {
