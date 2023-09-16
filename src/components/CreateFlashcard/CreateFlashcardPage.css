@@ -202,30 +202,24 @@ label{
 
 @media (max-width: 1374px){
     .term-imgs{
-        margin-left:58px;
+        margin-left:78px;
     }
 }
 
 @media (max-width: 1160px){
     .term-imgs{
-        margin-left:45px;
+        margin-left:55px;
     }
 }
 @media (max-width: 1042px){
     .term-imgs{
-        margin-left:36px;
+        margin-left:50px;
     }
 }
 
 @media (max-width:1024px){
     .ti-btn{
         font-size: 14px;
-    }
-}
-
-@media (max-width: 961px){
-    .term-imgs{
-        margin-left:26px;
     }
 }
 
@@ -237,7 +231,7 @@ label{
         align-items: center;
     }
     .term-imgs{
-        margin-left: 22px;
+        margin-left: 42px;
     }
 }
 
